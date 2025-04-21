@@ -1,0 +1,409 @@
+@font-face {
+  font-family: 'Russo One';
+  src: url('components/fonts/RussoOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  src: url('components/fonts/static/Urbanist-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  src: url('components/fonts/static/Urbanist-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  src: url('components/fonts/static/Urbanist-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  src: url('components/fonts/static/Urbanist-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+}
+.App-header{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contents {
+  flex: 1;
+  width: 100%;
+  padding-top: 40px;
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  background-color: white;
+}
+
+nav, footer {
+  font-family: "Russo One", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold ;
+  transition: color 200ms ease;
+}
+
+/* NAVBAR ========================================================================== */
+
+nav {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  padding: 16px;
+  top: 0; left: 0;
+  z-index: 9999;
+  font-size: 15px auto;
+  background-color: black;
+  border-bottom: 2px solid red;
+  box-shadow: 0 0 10px red;
+}
+
+.nav_link {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 20px;
+  transition: color 250ms ease;
+}
+.nav_link:hover {
+  color: red;
+}
+.active {
+  color: red;
+}
+
+/* FOOTER ========================================================================== */
+
+footer {
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  color: white;
+  font-size: 12px auto;
+  text-align: center;
+  background-color: black;
+  border-top: 2px solid red;
+  box-shadow: 0 -10px 10px -10px red;
+}
+footer :hover {
+  cursor: default;
+}
+
+/* HOME ========================================================================== */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.blur-image {
+  top: 0;
+  width: 60%;
+  transition: filter 0.5s ease;
+}
+.blur-image:hover {
+  filter: blur(3px);
+}
+.overlay-text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 200%;
+  font-weight: bold;
+  opacity: 0;
+  transition: 300ms ease;
+}
+.blur-image:hover + .overlay-text {
+  opacity: 1;
+}
+
+.music-table {
+  width: 100%;
+  font-weight: bold;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.music-table tr {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  filter: blur(5px);
+}
+.music-table .isGotw {
+  box-shadow: inset 0 0 8px 4px rgb(255, 75, 0);
+  filter: blur(0px);
+  color: rgb(255, 75, 0);
+}
+
+.subgenre-right, .subgenre-left {
+  width: 600px;
+  font-size: 46px;
+}
+
+.subgenre-right {
+  text-align: left;
+}
+.main-genre {
+  text-align: center;
+  font-size: 56px;
+}
+.subgenre-left {
+  text-align: right;
+}
+
+.jpop { background-image: url('components/images/jpop.png'); }
+.jpop .main-genre { background-color: rgba(146, 135, 153, 0.8); }
+
+.anime { background-image: url('components/images/anime.png'); }
+.anime .main-genre { background-color: rgba(214, 183, 131, 0.8); }
+
+.electro { background-image: url('components/images/electro.png'); }
+.electro .main-genre { background-color: rgba(39, 36, 31, 0.8); }
+
+.synthwave { background-image: url('components/images/synthwave.png'); }
+.synthwave .main-genre { background-color: rgba(83, 77, 82, 0.8); }
+
+.house { background-image: url('components/images/house.png'); }
+.house .main-genre { background-color: rgba(203, 226, 242, 0.8); }
+
+.trance { background-image: url('components/images/trance.png'); }
+.trance .main-genre { background-color: rgba(29, 62, 67, 0.8); }
+
+.techno { background-image: url('components/images/techno.png'); }
+.techno .main-genre { background-color: rgba(106, 116, 168, 0.8); }
+
+.rock { background-image: url('components/images/rock.png'); }
+.rock .main-genre { background-color: rgba(149, 139, 126, 0.8); }
+
+.metal { background-image: url('components/images/metal.png'); }
+.metal .main-genre { background-color: rgba(79, 61, 58, 0.8); }
+
+.bgm { background-image: url('components/images/bgm.png'); }
+.bgm .main-genre { background-color: rgba(89, 102, 122, 0.8); }
+
+/* ABOUT ME ========================================================================== */
+
+.profile-container {
+  text-align: center;
+  margin-top: 1.5%;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2.5px solid black;
+  box-shadow: 0 0 5px red;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.about-article {
+  max-width: 40%;
+  text-align: left;
+  word-wrap: break-word;
+  margin: 0 auto;
+}
+.about-article a {
+  color: red;
+}
+
+/* PORTFOLIO ========================================================================== */
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1000px;
+  justify-content: space-around;
+  color: white;
+}
+
+.portfolio-title {
+  display: block;
+  color:black;
+  margin: 50px;
+  margin-right: 184px;
+  margin-left: 184px;
+}
+
+.project,
+.organization {
+  width: 350px;
+  min-height: 420px;
+  background-color: #0f0f0f;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px red;
+}
+.project img,
+.organization img {
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.project-info h3,
+.organization a {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+}
+.organization a:hover {
+  color: #ff4500;
+}
+
+.project-info {
+  text-align: center;
+}
+.project-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #afafaf;
+}
+
+
+/* CONTACT ========================================================================== */
+
+.contact {
+  margin: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+.input-container {
+  display: flex;
+  align-items: flex-start;
+  border-right: 2px solid red;
+  padding-right: 20px;
+  margin-right: 20px;
+}
+.form-group {
+  margin-bottom: 10px;
+  width: 400px;
+}
+.form-group input,
+.form-group textarea,
+.form-group button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-family: "Urbanist", sans-serif;
+  border-radius: 5px;
+  border: 2px solid red;
+}
+.form-group textarea {
+  min-height: 150px;
+  min-width: 100%;
+  max-width: 100%;
+}
+input:focus, textarea:focus {
+  box-shadow: 0 0 8px red;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.social-media img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.social-media .links {
+  color: black;
+  font-size: 20px;
+}
+
+#github:hover{
+  color: #24292f;
+}
+#discord:hover{
+  color: #5765f2;
+}
+#reddit:hover{
+  color: #ff4500;
+}
+
+.mail {
+  width: 100%;
+  height: 55px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  background-color: #0080ff;
+  transition: 200ms ease;
+}
+.mail:hover {
+  background-color: #005fff;
+}
+
+.mail.isSending {
+  background-color: lime;
+}
+.loader {
+  margin: auto;
+  border: 3.5px solid white;
+  border-radius: 50%;
+  border-top: 3.5px solid lime;
+  width: 25px;
+  height: 25px;
+  animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+  0% { transform: rotate(10deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mail.invalid {
+  background-color: red;
+  cursor: default;
+}
